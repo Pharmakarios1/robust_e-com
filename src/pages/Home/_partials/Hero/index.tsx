@@ -31,10 +31,10 @@ const Hero = () => {
           </p>
 
           {
-            <div className="mt-8 flex justify-center md:justify-start w-full h-16 ">
+            <div className="mt-8 flex justify-center lg:justify-start w-full h-16 ">
               <CustomSearch
                 ref={inputRef}
-                className="!w-[400px]"
+                className="!w-w[300px] md:!w-[400px]"
                 onSearch={(value) => console.log(value)}
               />
             </div>

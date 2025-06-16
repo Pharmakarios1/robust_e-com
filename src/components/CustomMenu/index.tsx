@@ -8,11 +8,7 @@ const CustomMenu = ({
   children: ReactNode;
   className?: string;
 }) => {
-  return (
-    <div className={`bg-teal-800 rounded-md shadow-md ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`cursor-pointer ${className}`}>{children}</div>;
 };
 
 // CustomMenu.Item acts like a clickable option
@@ -23,8 +19,8 @@ CustomMenu.Item = ({
   className = "",
 }: {
   children: ReactNode;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
   className?: string;
 }) => {
   return (
