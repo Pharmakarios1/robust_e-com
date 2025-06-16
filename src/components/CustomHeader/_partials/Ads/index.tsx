@@ -1,18 +1,32 @@
 //third party imports
-import Search from "antd/es/input/Search";
-import { useEffect, useState } from "react";
-import { BiSearch, BiStar } from "react-icons/bi";
+
+import { useEffect, useState, useRef } from "react";
+import { BiStar } from "react-icons/bi";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaBuysellads, FaMortarPestle } from "react-icons/fa";
 import { MdLoyalty } from "react-icons/md";
 import { SiHubspot } from "react-icons/si";
 import { Link, useLocation } from "react-router";
 import { m } from "framer-motion";
+import { useSelector } from "react-redux";
+import { RootState } from "Redux/store";
+
+import type { InputRef } from "antd";
+import CustomSearch from "@components/CustomSearch";
 
 const Ads = () => {
   const [menu, setMenu] = useState("review");
   const [searchBar, setSearchBar] = useState(false);
   const location = useLocation();
+  const isSearchBoxActive = useSelector(
+    (state: RootState) => state.ui.isSearchBoxActive
+  );
+  const inputRef = useRef<InputRef>(null);
+  useEffect(() => {
+    if (isSearchBoxActive) {
+      inputRef.current?.focus();
+    }
+  }, [inputRef.current]);
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -36,13 +50,9 @@ const Ads = () => {
         className="hidden lg:flex"
       >
         {searchBar && (
-          <Search
-            placeholder="Search for products"
-            allowClear
-            enterButton={<BiSearch className="text-teal-800" />}
-            size="large"
-            className="w-[400px] h-10"
-            style={{ borderRadius: "20px" }}
+          <CustomSearch
+            ref={inputRef}
+            className="!w-[300px]"
             onSearch={(value) => console.log(value)}
           />
         )}

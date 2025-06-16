@@ -9,7 +9,7 @@ import NotFound from "pages/NotFound";
 import Home from "pages/Home";
 import Product from "pages/Products";
 import ProductDetails from "pages/ProductDetails";
-
+import Blog from "pages/Blog/Index";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -29,6 +29,14 @@ const App = () => {
             colorText: "#0f172a",
             colorBgBase: "#f8fafc",
           },
+          components: {
+            // Customize Ant Design components here
+            Button: {
+              colorPrimary: "#FF4500",
+              colorText: "#ffffff",
+              colorBgContainer: "#f8fafc",
+            },
+          },
         }}
       >
         <Routes>
@@ -38,6 +46,7 @@ const App = () => {
             <Route path="/product" element={<Product />} />
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/review" element={<p>hello</p>} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
