@@ -32,7 +32,7 @@ const DeskTop = () => {
   };
 
   return (
-    <div className="hidden md:flex items-center justify-between bg-teal-800 text-white py-2 w-full h-10 sticky top-0 left-0 z-50 shadow-2xl lg:px-10">
+    <div className="hidden md:flex items-center justify-between bg-teal-800 text-white py-2 w-full h-10 sticky top-0 left-0 z-50 shadow-5xl lg:px-10">
       <div className="flex gap-2 items-center">
         <div className="hover:bg-teal-600 h-full p-2 cursor-pointer transition-all duration-300">
           <BiHome className="text-2xl" onClick={() => handleclick("/", "")} />

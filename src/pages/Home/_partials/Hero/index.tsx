@@ -22,7 +22,7 @@ const Hero = () => {
     <div className="bg-[#00a293] ">
       <div className="w-[95%] md:w-full  mx-auto flex flex-col lg:flex-row ">
         {/* text container */}
-        <div className="container md:pl-10 pt-10 ">
+        <div className="container pt-28 md:pl-10 md:pt-10 ">
           <h1 className="text-4xl font-bold text-white text-center lg:text-left">
             The UK’s trusted online pharmacy
           </h1>
