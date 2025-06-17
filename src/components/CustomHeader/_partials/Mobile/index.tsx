@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "Redux/store";
 import { toggleSearchBox } from "Redux/ui/uiSlice";
 import { toggleAccountOpen } from "Redux/ui/accountSlice";
+import { CgClose } from "react-icons/cg";
 
 const MobibleNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,11 +53,19 @@ const MobibleNav = () => {
             <span>Kairos</span>
           </Link>
           <div className="text-white text-3xl flex items-center gap-1.5">
-            <BiUser
-              onClick={() => dispatch(toggleAccountOpen())}
-              className="text-2xl cursor-pointer"
-            />
+            {isAccountOpen ? (
+              <CgClose
+                onClick={() => dispatch(toggleAccountOpen())}
+                className="text-2xl cursor-pointer"
+              />
+            ) : (
+              <BiUser
+                onClick={() => dispatch(toggleAccountOpen())}
+                className="text-2xl cursor-pointer"
+              />
+            )}
             {isAccountOpen && <Account />}
+
             <Link to="/cart" className="relative cursor-pointer ">
               <BsCart className="text-2xl " />
               <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full px-1">

@@ -1,9 +1,13 @@
-
+import DesktopFooter from "./DeskTop";
+import MobileFooter from "./Mobile";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <div className="bg-teal-800 text-white p-4 ">
+      <DesktopFooter />
+      <MobileFooter />
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;

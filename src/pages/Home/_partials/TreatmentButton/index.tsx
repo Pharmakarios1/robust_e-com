@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { treatments } from "utils/data";
 import TreatmentCard from "./_partials/TreatmentCard";
+import { Spin } from "antd";
 
 const TreatmentWrapper = () => {
+  // State to manage active category and selected treatment
   const [active, setActive] = useState<string>("Popular");
   const [selectedCategory, setSelectedCategory] = useState("All Treatments");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [loadmore, setLoadmore] = useState<number>(8);
 
   const filtered =
     selectedCategory === "All Treatments"
@@ -15,6 +19,14 @@ const TreatmentWrapper = () => {
   const handleClick = (treatment: string) => {
     setSelectedCategory(treatment);
     setActive(treatment);
+  };
+  // Function to handle load more functionality
+  const handleLoadMore = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoadmore((prev) => prev + 2);
+      setLoading(false);
+    }, 2000);
   };
   return (
     <div className="w-[90%]  mx-auto mt-8">
@@ -94,7 +106,7 @@ const TreatmentWrapper = () => {
           </div>
           {/* ui rendering */}
           <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {filtered.map((item) => (
+            {filtered.slice(0, loadmore).map((item) => (
               <TreatmentCard
                 key={item.id}
                 imgurl={item.imgurl}
@@ -103,6 +115,22 @@ const TreatmentWrapper = () => {
               />
             ))}
           </div>
+          {/* loading spinner */}
+          {loading && (
+            <div className="mt-4 text-sm text-gray-500">
+              <Spin />
+            </div>
+          )}
+          {/* Load more button */}
+          {!loading && loadmore < filtered.length && (
+            <button
+              className="bg-teal-800 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors duration-300"
+              onClick={handleLoadMore}
+              disabled={loading}
+            >
+              LoadMore
+            </button>
+          )}
         </div>
       </div>
     </div>
