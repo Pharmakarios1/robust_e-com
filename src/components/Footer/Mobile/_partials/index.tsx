@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
+import { Link } from "react-router";
 import { learnMore2, treatments, usefulLinks2 } from "utils/data";
 
 const GetInTouch = () => {
@@ -105,12 +106,13 @@ const UsefulLinks = () => {
 
       {usefulLinksOpen &&
         usefulLinks2.slice(0, 6).map((item, index) => (
-          <div
+          <Link
+            to={`/useful-links/${item}`}
             key={index}
             className="flex items-center justify-between  cursor-pointer transition-all duration-300"
           >
             <span className="text-sm">{item}</span>
-          </div>
+          </Link>
         ))}
     </div>
   );
