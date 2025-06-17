@@ -18,7 +18,7 @@ const TreatmentCard = ({
       <img
         src={i}
         alt={conditionName}
-        className="rounded-t-lg w-full h-36 hidden  lg:flex"
+        className="rounded-t-lg w-full h-36 hidden  md:flex"
       />
       <Link
         to={`/treatments/${conditionName}`.toString()}
