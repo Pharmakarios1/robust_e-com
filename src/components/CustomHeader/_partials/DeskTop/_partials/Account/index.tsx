@@ -1,38 +1,47 @@
+import CustomMenu from "@components/CustomMenu";
+import { RootState } from "Redux/store";
 import { useState } from "react";
-import { BiUser } from "react-icons/bi";
-import { FaAngleDown } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Account = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+  const [profile, setProfile] = useState(false);
+  //Redux state
+  const isAccountOpn = useSelector(
+    (state: RootState) => state.account.isAccountActive
+  );
   return (
     <>
-      <div
-        className="relative flex gap-1 items-center text-white justify-center cursor-pointer transition-all duration-300 hover:text-teal-400"
-        onMouseOver={() => setIsOpen(true)}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <BiUser className="text-2xl" />
-        <h2 className="text-base">Account</h2>
-        <FaAngleDown className="text-lg " />
-      </div>
-      {isOpen && (
-        <div className="absolute top-14 right-7 bg-teal-800 shadow-lg rounded-lg p-4">
-          <ul className="space-y-2">
-            <li className="text-white hover:text-teal-600 cursor-pointer">
-              Profile
-            </li>
-            <li className="text-white hover:text-teal-600 cursor-pointer">
-              Orders
-            </li>
-            <li className="text-white hover:text-teal-600 cursor-pointer">
-              Wishlist
-            </li>
-            <li className="text-white hover:text-teal-600 cursor-pointer">
-              Logout
-            </li>
-          </ul>
-        </div>
+      {isAccountOpn && (
+        <CustomMenu className="absolute top-16 md:top-10 right-10 bg-teal-800 md:bg-teal-600 shadow-lg rounded-lg p-4">
+          <CustomMenu.Item
+            className="relative  text-sm md:text-base hover:bg-teal-600 md:hover:bg-teal-800 cursor-pointer transition-all duration-300 flex"
+            onMouseEnter={() => setProfile(true)}
+            onMouseLeave={() => setProfile(false)}
+          >
+            {profile ? "Profile" : "Profile"}
+          </CustomMenu.Item>
+          <CustomMenu.Item
+            className="relative text-sm md:text-base hover:bg-teal-600 md:hover:bg-teal-800 cursor-pointer transition-all duration-300 flex"
+            onMouseEnter={() => setProfile(true)}
+            onMouseLeave={() => setProfile(false)}
+          >
+            Order
+          </CustomMenu.Item>
+          <CustomMenu.Item
+            className="relative  text-sm md:text-base hover:bg-teal-600 md:hover:bg-teal-800 cursor-pointer transition-all duration-300 flex"
+            onMouseEnter={() => setProfile(true)}
+            onMouseLeave={() => setProfile(false)}
+          >
+            Points
+          </CustomMenu.Item>
+          <CustomMenu.Item
+            className="relative  text-sm md:text-base hover:bg-teal-600 md:hover:bg-teal-800 cursor-pointer transition-all duration-300 flex"
+            onMouseEnter={() => setProfile(true)}
+            onMouseLeave={() => setProfile(false)}
+          >
+            My Promotions
+          </CustomMenu.Item>
+        </CustomMenu>
       )}
     </>
   );

@@ -1,4 +1,4 @@
-import { BiHome, BiSearch } from "react-icons/bi";
+import { BiHome, BiSearch, BiUser } from "react-icons/bi";
 import Account from "./_partials/Account";
 import CustomMenu from "@components/CustomMenu";
 import { useState } from "react";
@@ -12,8 +12,10 @@ import {
   travelHealthCategories,
   skinCareCategories,
 } from "utils/data";
-import { useDispatch } from "react-redux";
+import { toggleAccountOpen } from "Redux/ui/accountSlice";
 import { toggleSearchBox } from "Redux/ui/uiSlice";
+import { FaAngleDown } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 
 const DeskTop = () => {
   const [men, setMen] = useState(false);
@@ -22,7 +24,7 @@ const DeskTop = () => {
   const [respiratory, setRespiratory] = useState(false);
   const [travel, setTravel] = useState(false);
   const [skin, setSkin] = useState(false);
-  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const handleclick = (category: string, keyword: string) => {
     if (category === "search" || keyword === "") {
@@ -30,6 +32,9 @@ const DeskTop = () => {
     }
     return navigate(`/${category}/${keyword}`);
   };
+
+  //Redux management
+  const dispatch = useDispatch();
 
   return (
     <div className="hidden md:flex items-center justify-between bg-teal-800 text-white py-2 w-full h-10 sticky top-0 left-0 z-50 shadow-5xl lg:px-10">
@@ -180,7 +185,16 @@ const DeskTop = () => {
           )}
         </CustomMenu.Item>
       </CustomMenu>
-      <Account />
+
+      <div
+        onClick={() => dispatch(toggleAccountOpen())}
+        className="flex text-2xl items-center justify-center gap-0.5 cursor-pointer"
+      >
+        <BiUser className=" " />
+        <h2 className="text-base hidden md:block">Account</h2>
+        <FaAngleDown className="text-lg hidden md:block" />
+        <Account />
+      </div>
     </div>
   );
 };

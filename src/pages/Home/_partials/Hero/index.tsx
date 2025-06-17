@@ -20,7 +20,7 @@ const Hero = () => {
   }, [inputRef.current]);
   return (
     <div className="bg-[#00a293] ">
-      <div className="w-[95%] md:w-full  mx-auto flex flex-col lg:flex-row ">
+      <div className="w-[95%] md:w-full  mx-auto flex items-center flex-col lg:flex-row ">
         {/* text container */}
         <div className="container pt-28 md:pl-10 md:pt-10 ">
           <h1 className="text-4xl font-bold text-white text-center lg:text-left">
@@ -93,7 +93,7 @@ const Hero = () => {
           </div>
         </div>
         {/* img container */}
-        <div className="hidden md:flex container bg-white">
+        <div className="hidden md:flex container">
           <img src={heroImg} alt="h-full w-full bg-contain" />
         </div>
       </div>

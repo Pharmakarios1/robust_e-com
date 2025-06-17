@@ -1,10 +1,15 @@
 import { useState } from "react";
-import { BiCollapse, BiMenu } from "react-icons/bi";
+import { BiCollapse, BiMenu, BiSearch, BiUser } from "react-icons/bi";
 import { BsCart } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
+
 import { FaMortarPestle } from "react-icons/fa6";
 import { Link } from "react-router";
 import { motion as m } from "framer-motion";
+import Account from "../DeskTop/_partials/Account";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "Redux/store";
+import { toggleSearchBox } from "Redux/ui/uiSlice";
+import { toggleAccountOpen } from "Redux/ui/accountSlice";
 
 const MobibleNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,11 +19,16 @@ const MobibleNav = () => {
   const [respiratory, setRespiratory] = useState(false);
   const [travel, setTravel] = useState(false);
   const [skin, setSkin] = useState(false);
+  const dispatch = useDispatch();
+  //Redux account State
+  const isAccountOpen = useSelector(
+    (state: RootState) => state.account.isAccountActive
+  );
   return (
     <>
       <div className="fixed md:hidden w-full bg-teal-800 top-0  z-100 p-5 ">
-        <div className="flex item-center justify-between">
-          <div className="cursor-pointer">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3 cursor-pointer">
             {isMenuOpen ? (
               <BiCollapse
                 className="text-white text-3xl"
@@ -30,6 +40,9 @@ const MobibleNav = () => {
                 onClick={() => setIsMenuOpen(true)}
               />
             )}
+            <span onClick={() => dispatch(toggleSearchBox())}>
+              <BiSearch className="text-2xl text-white" />
+            </span>
           </div>
           <Link
             to="/"
@@ -39,13 +52,17 @@ const MobibleNav = () => {
             <span>Kairos</span>
           </Link>
           <div className="text-white text-3xl flex items-center gap-1.5">
-            <FaUser className="text-2xl cursor-pointer" />
-            <span className="relative cursor-pointer">
+            <BiUser
+              onClick={() => dispatch(toggleAccountOpen())}
+              className="text-2xl cursor-pointer"
+            />
+            {isAccountOpen && <Account />}
+            <Link to="/cart" className="relative cursor-pointer ">
               <BsCart className="text-2xl " />
               <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full px-1">
                 3
               </span>
-            </span>
+            </Link>
           </div>
         </div>
       </div>

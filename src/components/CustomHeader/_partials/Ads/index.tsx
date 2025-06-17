@@ -41,7 +41,7 @@ const Ads = () => {
   return (
     <div className="hidden md:flex bg-gray-200 h-20 w-full items-center justify-between lg:px-10 shadow-md">
       <h2 className="text-5xl font-semibold text-teal-800 flex items-center justify-center gap-1">
-        <FaMortarPestle /> Kai℞os{" "}
+        <FaMortarPestle /> Kairos Health
       </h2>
       <m.div
         initial={{ opacity: 0, y: -20 }}
