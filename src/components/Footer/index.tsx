@@ -3,10 +3,15 @@ import MobileFooter from "./Mobile";
 
 const Footer = () => {
   return (
-    <div className="bg-teal-800 text-white p-4 ">
-      <DesktopFooter />
-      <MobileFooter />
-    </div>
+    <>
+      <div className="bg-teal-800 text-white p-4 ">
+        <DesktopFooter />
+        <MobileFooter />
+      </div>
+      <div className="bg-white text-emerald-800 text-center p-4">
+        <p>&copy; 2025 Kairos. All rights reserved.</p>
+      </div>
+    </>
   );
 };
 

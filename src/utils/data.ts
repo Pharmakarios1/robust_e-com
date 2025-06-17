@@ -1,3 +1,22 @@
+//data for footer
+
+export const learnMore2 = [
+  "How it Works",
+  "About Us",
+  "FAQs",
+  "Health Hub",
+  "Work for Us",
+  "Delivery Information",
+];
+export const usefulLinks2 = [
+  " Contact Us",
+  " Reviews",
+  " Loyalty Program",
+  " Promotions",
+  " Refer a Friend",
+];
+
+// This file contains sample data for various health categories and treatments.
 export const mensHealthCategories = [
   {
     id: 1,

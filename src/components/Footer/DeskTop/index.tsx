@@ -8,7 +8,7 @@ import {
   FaX,
   FaYoutube,
 } from "react-icons/fa6";
-
+import { GiPadlock } from "react-icons/gi";
 import { treatments } from "utils/data";
 
 const learnMore = [
@@ -42,7 +42,7 @@ const getInTouch = [
 const DesktopFooter = () => {
   return (
     <div className="hidden  w-[90%] my-10 mx-auto lg:grid grid-cols-[2fr_3fr]">
-      <div className="flex flex-col justify-between gap-4  pr-4">
+      <div className="flex flex-col justify-between gap-4  pr-4 ">
         <div>
           <div className="flex items-center gap-2 border-b-[1px] border-white w-54 pb-6">
             <FaMortarPestle className="text-3xl" />
@@ -66,10 +66,20 @@ const DesktopFooter = () => {
             </li>
           </ul>
         </div>
-        <div className="flex gap-3 text-sm items-center justify-between">
-          <img src="/hero.png" alt="" />
+        <div className="flex flex-col text-sm items-start  gap-4">
+          <span className="flex text-lg items-center gap-2">
+            <GiPadlock /> Pay securely with:
+          </span>
+          <div className="">
+            <img
+              src="/png/visa.png"
+              alt="visa"
+              className="w-58 h-full object-contain"
+            />
+          </div>
         </div>
       </div>
+      {/* links */}
       <div className="grid grid-cols-2">
         <div className="grid grid-rows-2 gap-4 p-4 ">
           <div className="flex flex-col gap-2 p-4 bg-teal-700 rounded-lg w-full">
@@ -101,10 +111,10 @@ const DesktopFooter = () => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-4 p-4 bg-teal-700 rounded-lg ">
-          <div className="flex flex-col gap-2 p-4  rounded-lg w-full">
+        <div className="grid grid-rows-2 gap-4 p-4 ">
+          <div className="flex flex-col gap-2 p-4 bg-teal-700 rounded-lg w-full">
             <h1 className="text-lg  font-semibold border-b-[1px] border-black/20 pb-2 ">
-              Learn More
+              Useful Links
             </h1>
 
             {usefulLinks.slice(0, 6).map((item, index) => (
@@ -116,9 +126,9 @@ const DesktopFooter = () => {
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-2 p-4 rounded-lg w-full">
+          <div className="flex flex-col gap-2 p-4 bg-teal-700 rounded-lg w-full">
             <h1 className="text-lg  font-semibold border-b-[1px] border-black/20 pb-2 ">
-              Learn More
+              Get in Touch
             </h1>
 
             {getInTouch.map((item, index) => (
