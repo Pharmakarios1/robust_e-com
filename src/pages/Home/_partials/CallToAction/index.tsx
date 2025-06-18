@@ -25,7 +25,7 @@ const CallToAction = () => {
           <img
             src="/png/ctaimg.png"
             alt=""
-            className="h-20 w-36 rounded-md hidden lg:block"
+            className="h-20 w-36 rounded-md hidden md:block"
           />
         </div>
       </div>
