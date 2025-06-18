@@ -31,7 +31,7 @@ const Hero = () => {
           </p>
 
           {
-            <div className="mt-8 flex justify-center lg:justify-start w-full h-16 ">
+            <div className="mt-12 flex justify-center lg:justify-start w-full h-16 ">
               <CustomSearch
                 ref={inputRef}
                 className="!w-w[300px] md:!w-[400px]"
@@ -39,8 +39,8 @@ const Hero = () => {
               />
             </div>
           }
-          <div className="grid grid-cols-2 w-full mt-8 gap-4">
-            <div className="flex flex-col justify-center  text-white p-1 rounded-lg shadow-md">
+          <div className="grid md:grid-cols-2 w-full mt-4 gap-4 place-content-center">
+            <div className="flex flex-col justify-center  text-white p-1 rounded-lg shadow-md max-w-[250px]">
               <span className="flex items-center gap-1.5">
                 <BiCheck className="text-teal-200" />{" "}
                 <p className="text-sm md:text-base">UK registered pharmacy</p>
@@ -50,7 +50,7 @@ const Hero = () => {
                 <p className="text-sm md:text-base">Discreet packaging</p>
               </span>
             </div>
-            <div className="flex flex-col justify-center text-white p-1 rounded-lg shadow-md">
+            <div className="flex flex-col justify-center text-white p-1 rounded-lg shadow-md max-w-[250px]">
               <span className="flex items-center gap-1.5">
                 <BiCheck className="text-teal-200" />{" "}
                 <p className="text-sm md:text-base">
@@ -94,7 +94,7 @@ const Hero = () => {
         </div>
         {/* img container */}
         <div className=" md:flex container">
-          <img src={heroImg} alt="hero image" className="h-full w-full bg-contain" />
+          <img src={heroImg} alt="hero image" className="hidden md:block h-full w-full bg-contain" />
         </div>
       </div>
     </div>
