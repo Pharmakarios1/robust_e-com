@@ -57,7 +57,7 @@ const TreatmentWrapper = () => {
             <div
               onClick={() => handleClick("Popular")}
               className={
-                "border-2 text-teal-800 p-1 rounded-md border-teal-800 w-20 hidden md:w-32 " +
+                "border-2 text-teal-800 p-1 rounded-md border-teal-800 w-20 hidden md:block md:w-32 " +
                 (active === "Popular" ? "bg-teal-800 text-white" : "")
               }
             >
