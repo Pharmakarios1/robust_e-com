@@ -5,10 +5,10 @@ import { Spin } from "antd";
 
 const TreatmentWrapper = () => {
   // State to manage active category and selected treatment
-  const [active, setActive] = useState<string>("Popular");
+  const [active, setActive] = useState<string>("All Treatments");
   const [selectedCategory, setSelectedCategory] = useState("All Treatments");
   const [loading, setLoading] = useState<boolean>(false);
-  const [loadmore, setLoadmore] = useState<number>(8);
+  const [loadmore, setLoadmore] = useState<number>(4);
 
   const filtered =
     selectedCategory === "All Treatments"
@@ -24,7 +24,7 @@ const TreatmentWrapper = () => {
   const handleLoadMore = () => {
     setLoading(true);
     setTimeout(() => {
-      setLoadmore((prev) => prev + 2);
+      setLoadmore((prev) => prev + 4);
       setLoading(false);
     }, 300);
   };
@@ -47,17 +47,17 @@ const TreatmentWrapper = () => {
           {/* btn control */}
           <div className="flex gap-2 mt-1 cursor-pointer flex-wrap justify-center transition-all duration-300 ">
             <div
-              className={`border-2 p-1  rounded-md text-teal-800 border-teal-800 w-20 md:w-32 hidden lg:block ${
+              className={`border-2 p-1  rounded-md text-teal-800 border-teal-800 w-20 md:w-32  lg:block ${
                 active === "All Treatments" ? "bg-teal-800 text-white" : ""
               }`}
               onClick={() => handleClick("All Treatments")}
             >
-              <span className=" text-nowrap">All Treatments</span>
+              <span className=" text-nowrap">All </span>
             </div>
             <div
               onClick={() => handleClick("Popular")}
               className={
-                "border-2 text-teal-800 p-1 rounded-md border-teal-800 w-20 md:w-32 " +
+                "border-2 text-teal-800 p-1 rounded-md border-teal-800 w-20 hidden md:w-32 " +
                 (active === "Popular" ? "bg-teal-800 text-white" : "")
               }
             >

@@ -18,11 +18,11 @@ const TreatmentCard = ({
       <img
         src={i}
         alt={conditionName}
-        className="rounded-t-lg w-full h-36 hidden  md:flex"
+        className="rounded-t-lg w-full h-36  md:flex"
       />
       <Link
         to={`/treatments/${conditionName}`.toString()}
-        className="cursor-pointer flex items-center justify-between p-1 bg-teal-800 text-white lg:rounded-b-lg rounded-lg "
+        className="cursor-pointer flex items-center justify-between p-1 bg-teal-800 text-white rounded-b-lg  "
       >
         {defaultIcon ? defaultIcon : <BiFace className="text-2xl" />}
         <h3 className="text-lg font-semibold mt-2">{conditionName}</h3>
