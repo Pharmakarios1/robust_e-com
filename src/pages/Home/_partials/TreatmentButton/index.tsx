@@ -47,7 +47,7 @@ const TreatmentWrapper = () => {
           {/* btn control */}
           <div className="flex gap-2 mt-1 cursor-pointer flex-wrap justify-center transition-all duration-300 ">
             <div
-              className={`border-2 p-1  rounded-md text-teal-800 border-teal-800 w-24 md:w-32 hidden lg:block ${
+              className={`border-2 p-1  rounded-md text-teal-800 border-teal-800 w-20 md:w-32 hidden lg:block ${
                 active === "All Treatments" ? "bg-teal-800 text-white" : ""
               }`}
               onClick={() => handleClick("All Treatments")}
@@ -57,14 +57,14 @@ const TreatmentWrapper = () => {
             <div
               onClick={() => handleClick("Popular")}
               className={
-                "border-2 text-teal-800 p-1 rounded-md border-teal-800 w-24 md:w-32 " +
+                "border-2 text-teal-800 p-1 rounded-md border-teal-800 w-20 md:w-32 " +
                 (active === "Popular" ? "bg-teal-800 text-white" : "")
               }
             >
               <span className="text-nowrap">Popular</span>
             </div>
             <div
-              className={`border-2 p-1 rounded-md text-teal-800  border-teal-800 w-24 md:w-32  ${
+              className={`border-2 p-1 rounded-md text-teal-800  border-teal-800 w-20 md:w-32  ${
                 active === "Men's" ? "bg-teal-800 text-white" : ""
               }`}
               onClick={() => handleClick("Men's")}
@@ -72,7 +72,7 @@ const TreatmentWrapper = () => {
               <span className="">Men's </span>
             </div>
             <div
-              className={`border-2 p-1 rounded-md text-teal-800  border-teal-800 w-24 md:w-32  ${
+              className={`border-2 p-1 rounded-md text-teal-800  border-teal-800 w-20 md:w-32  ${
                 active === "Women's" ? "bg-teal-800 text-white" : ""
               }`}
               onClick={() => handleClick("Women's")}
@@ -81,7 +81,7 @@ const TreatmentWrapper = () => {
             </div>
             <div
               onClick={() => handleClick("Respiratory")}
-              className={`border-2 p-1 rounded-md text-teal-800  border-teal-800 w-24 md:w-32  ${
+              className={`border-2 p-1 rounded-md text-teal-800 hidden md:block border-teal-800 w-20 md:w-32  ${
                 active === "Respiratory" ? "bg-teal-800 text-white" : ""
               }`}
             >
@@ -89,7 +89,7 @@ const TreatmentWrapper = () => {
             </div>
             <div
               onClick={() => handleClick("Sexual")}
-              className={`border-2 p-1 rounded-md text-teal-800 border-teal-800 w-24 md:w-32 hidden lg:block ${
+              className={`border-2 p-1 rounded-md text-teal-800 border-teal-800 w-20 md:w-32 hidden lg:block ${
                 active === "Sexual" ? "bg-teal-800 text-white" : ""
               }`}
             >
@@ -97,7 +97,7 @@ const TreatmentWrapper = () => {
             </div>
             <div
               onClick={() => handleClick("Others")}
-              className={`border-2 p-1 rounded-md text-teal-800 border-teal-800 w-24 md:w-32 hidden lg:block ${
+              className={`border-2 p-1 rounded-md text-teal-800 border-teal-800 w-20 md:w-32 md lg:block ${
                 active === "Others" ? "bg-teal-800 text-white" : ""
               }`}
             >

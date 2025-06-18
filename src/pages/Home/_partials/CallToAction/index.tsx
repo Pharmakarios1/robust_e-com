@@ -1,33 +1,31 @@
-import { Button, Input } from "antd";
+import { Button, Input, Space } from "antd";
 
 const CallToAction = () => {
   return (
     <div className="bg-teal-100 text-white p-4 rounded-md">
-      <div className="w-[80%] mx-auto bg-teal-800 p-6 rounded-md">
-        <div className="flex space-x-20 flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-col justify-center md:items-start">
-            <h2 className="text-2xl font-bold mb-2">
+      <div className="w-[90%] md:h-60 mx-auto bg-teal-800 p-6 lg:px-10 rounded-md">
+        <div className="flex  flex-col md:flex-row md:justify-between items-center h-full ">
+          <div className="flex text-center lg:text-start  h-full flex-col  items-center justify-between  text-white">
+            <h2 className="text-2xl lg:text-4xl lg:w-80  mb-2">
               Want 10% OFF your first order?
             </h2>
-            <p className="text-sm mb-4">
+            <p className="text-[13px] mb-4">
               Join our newsletter and receive an exclusive 10% OFF!
             </p>
 
-            <div className="flex items-start md:items-center gap-3">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full bg-teal-500 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600"
-              />
-              <Button className="ml-2 !bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-700">
-                Sub
-              </Button>
+            <div className="w-full lg:w-80">
+              <Space.Compact className="w-full">
+                <Input placeholder="Enter your email" size="large" />
+                <Button type="primary" size="large">
+                  Submit
+                </Button>
+              </Space.Compact>
             </div>
           </div>
           <img
-            src="/png/hero.png"
+            src="/png/ctaimg.png"
             alt=""
-            className="h-20 w-54 rounded-md hidden lg:block"
+            className="h-20 w-36 rounded-md hidden lg:block"
           />
         </div>
       </div>

@@ -2,6 +2,7 @@ import DesktopFooter from "./DeskTop";
 import MobileFooter from "./Mobile";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <>
       <div className="bg-teal-800 text-white p-4 ">
@@ -9,7 +10,7 @@ const Footer = () => {
         <MobileFooter />
       </div>
       <div className="bg-white text-emerald-800 text-center p-4">
-        <p>&copy; 2025 Kairos. All rights reserved.</p>
+        <p className="text-sm">&copy; {currentYear} PharmaCare. All rights reserved.</p>
       </div>
     </>
   );

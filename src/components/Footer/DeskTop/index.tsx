@@ -44,9 +44,9 @@ const DesktopFooter = () => {
     <div className="hidden  w-[90%] my-10 mx-auto lg:grid grid-cols-[2fr_3fr]">
       <div className="flex flex-col justify-between gap-4  pr-4 ">
         <div>
-          <div className="flex items-center gap-2 border-b-[1px] border-white w-54 pb-6">
+          <div className="flex items-center gap-2 border-b-[1px] border-white w-58 pb-6">
             <FaMortarPestle className="text-3xl" />
-            <h1 className="text-4xl font-semibold ">kairos App</h1>
+            <h1 className="text-2xl font-semibold ">PharmaCare App</h1>
           </div>
           <ul className="flex flex-col gap-4 text-sm items-start ">
             <li className="flex items-center justify-center gap-1">

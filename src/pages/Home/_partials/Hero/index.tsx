@@ -23,10 +23,10 @@ const Hero = () => {
       <div className="w-[95%] md:w-full  mx-auto flex items-center flex-col lg:flex-row ">
         {/* text container */}
         <div className="container pt-28 md:pl-10 md:pt-10 ">
-          <h1 className="text-4xl font-bold text-white text-center lg:text-left">
-            The UK’s trusted online pharmacy
+          <h1 className="text-3xl w-full md:text-4xl  font-bold text-white text-center lg:text-left">
+            The 9ja’s trusted online pharmacy
           </h1>
-          <p className="mt-4 text-lg text-white text-center lg:text-left">
+          <p className="mt-4  text-base md:text-lg text-white text-center lg:text-left">
             Rated 'exceptional' and trusted by more than 1.65 million customers
           </p>
 

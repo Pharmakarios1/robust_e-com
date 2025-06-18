@@ -2,7 +2,6 @@ import { useState } from "react";
 import { BiCollapse, BiMenu, BiSearch, BiUser } from "react-icons/bi";
 import { BsCart } from "react-icons/bs";
 
-import { FaMortarPestle } from "react-icons/fa6";
 import { Link } from "react-router";
 import { motion as m } from "framer-motion";
 import Account from "../DeskTop/_partials/Account";
@@ -29,6 +28,7 @@ const MobibleNav = () => {
     <>
       <div className="fixed md:hidden w-full bg-teal-800 top-0  z-100 p-5 ">
         <div className="flex items-center justify-between">
+          {/* menu icon */}
           <div className="flex items-center gap-3 cursor-pointer">
             {isMenuOpen ? (
               <BiCollapse
@@ -45,13 +45,14 @@ const MobibleNav = () => {
               <BiSearch className="text-2xl text-white" />
             </span>
           </div>
+          {/* logo */}
           <Link
             to="/"
             className="text-white text-2xl flex font-semibold items-center gap-1"
           >
-            <FaMortarPestle className="" />
-            <span>Kairos</span>
+            <span>PharmaCare</span>
           </Link>
+          {/* account */}
           <div className="text-white text-3xl flex items-center gap-1.5">
             {isAccountOpen ? (
               <CgClose
