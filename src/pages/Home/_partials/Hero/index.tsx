@@ -93,8 +93,8 @@ const Hero = () => {
           </div>
         </div>
         {/* img container */}
-        <div className="hidden md:flex container">
-          <img src={heroImg} alt="h-full w-full bg-contain" />
+        <div className=" md:flex container">
+          <img src={heroImg} alt="hero image" className="h-full w-full bg-contain" />
         </div>
       </div>
     </div>
