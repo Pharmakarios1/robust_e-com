@@ -26,7 +26,7 @@ const TreatmentWrapper = () => {
     setTimeout(() => {
       setLoadmore((prev) => prev + 2);
       setLoading(false);
-    }, 2000);
+    }, 300);
   };
   return (
     <div className="w-[90%]  mx-auto mt-8">

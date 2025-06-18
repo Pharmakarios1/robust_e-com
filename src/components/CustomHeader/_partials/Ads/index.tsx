@@ -1,42 +1,16 @@
 //third party imports
 
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import { BiStar } from "react-icons/bi";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaBuysellads, FaMortarPestle } from "react-icons/fa";
 import { MdLoyalty } from "react-icons/md";
 import { SiHubspot } from "react-icons/si";
-import { Link, useLocation } from "react-router";
+import { Link } from "react-router";
 import { m } from "framer-motion";
-import { useSelector } from "react-redux";
-import { RootState } from "Redux/store";
-
-import type { InputRef } from "antd";
-import CustomSearch from "@components/CustomSearch";
 
 const Ads = () => {
   const [menu, setMenu] = useState("review");
-  const [searchBar, setSearchBar] = useState(false);
-  const location = useLocation();
-  const isSearchBoxActive = useSelector(
-    (state: RootState) => state.ui.isSearchBoxActive
-  );
-  const inputRef = useRef<InputRef>(null);
-  useEffect(() => {
-    if (isSearchBoxActive) {
-      inputRef.current?.focus();
-    }
-  }, [inputRef.current]);
-
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
-      if (location.pathname !== "/") {
-        setSearchBar(true);
-      }
-      console.log("am rendered");
-    }, 100);
-    return () => clearTimeout(timeOut);
-  }, [location.pathname]);
 
   return (
     <div className="hidden md:flex bg-gray-200 h-20 w-full items-center justify-between lg:px-10 shadow-md">
@@ -48,15 +22,7 @@ const Ads = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5 }}
         className="hidden lg:flex"
-      >
-        {searchBar && (
-          <CustomSearch
-            ref={inputRef}
-            className="!w-[300px]"
-            onSearch={(value) => console.log(value)}
-          />
-        )}
-      </m.div>
+      ></m.div>
       <div className="flex flex-col items-center justify-between gap-4">
         <div className="flex gap-4  bg-teal-800 text-sm text-white px-4 py-2 rounded-b-2xl min-w-[350px] position top-0 right-20">
           <Link to="/page1" className=" hover:text-teal-600">
