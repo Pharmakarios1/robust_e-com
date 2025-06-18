@@ -32,17 +32,16 @@ const Hero = () => {
 
           {
             <div className="mt-12 flex justify-center lg:justify-start w-full h-16 ">
-              <CustomSearch
-                ref={inputRef}
-                className="!w-w[300px] md:!w-full"
-              />
+              <CustomSearch ref={inputRef} className="!w-w[300px] md:!w-full" />
             </div>
           }
           <div className="grid md:grid-cols-2 w-full mt-4 gap-4 place-content-center">
             <div className="flex flex-col justify-center  text-white p-1 rounded-lg shadow-md max-w-[250px]">
               <span className="flex items-center gap-1.5">
                 <BiCheck className="text-teal-200" />{" "}
-                <p className="text-sm md:text-base">UK registered pharmacy</p>
+                <p className="text-sm md:text-base">
+                  9ja's registered pharmacy
+                </p>
               </span>
               <span className="flex items-center gap-1.5">
                 <BiCheck className="text-teal-200" />{" "}

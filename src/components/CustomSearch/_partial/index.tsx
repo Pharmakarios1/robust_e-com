@@ -12,7 +12,7 @@ const SearchItemWrapper = ({
   return (
     <div className="bg-white shadow-md rounded-lg p-4 max-w-[350]">
       <div className="space-y-2 flex flex-col">
-        {results.slice(0, 6).map((item) => (
+        {results.slice(0, 10).map((item) => (
           <Link to={`/treatment/${item.id}`}
             key={item.id}
             className="hover:cursor-pointer rounded-md hover:bg-gray-200 transition-colors duration-200 p-1"
