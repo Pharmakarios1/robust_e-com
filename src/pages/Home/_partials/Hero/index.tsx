@@ -19,7 +19,7 @@ const Hero = () => {
     }
   }, [inputRef.current]);
   return (
-    <div className="bg-[#00a293] ">
+    <div className="bg-[#00a293] " id="hero">
       <div className="w-[95%] md:w-full  mx-auto flex items-center flex-col lg:flex-row ">
         {/* text container */}
         <div className="container pt-28 md:pl-10 md:pt-10 ">
@@ -35,7 +35,7 @@ const Hero = () => {
               <CustomSearch ref={inputRef} className="!w-w[300px] md:!w-full" />
             </div>
           }
-          <div className="grid md:grid-cols-2 w-full mt-4 gap-4 place-content-center">
+          <div className="grid sm:grid-cols-2 w-full mt-4 gap-4 place-content-center">
             <div className="flex flex-col justify-center  text-white p-1 rounded-lg shadow-md max-w-[250px]">
               <span className="flex items-center gap-1.5">
                 <BiCheck className="text-teal-200" />{" "}

@@ -18,8 +18,12 @@ const CustomSearch = ({
         item.condition.toLowerCase().includes(query.toLowerCase())
       )
     : [];
+
   return (
-    <div className="relative flex flex-col items-center justify-center w-full ">
+    <div
+      className="relative flex flex-col items-center justify-center w-full "
+      id="search"
+    >
       <div className={` flex items-center justify-center w-full h-16 `}>
         <Input.Search
           allowClear

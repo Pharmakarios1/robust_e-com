@@ -16,6 +16,79 @@ export const usefulLinks2 = [
   " Refer a Friend",
 ];
 
+//data for products and categories
+// const products = [
+//   {
+//     id: 1,
+//     name: "Finasteride",
+//     image: "finasteride-packshot.jpg",
+//     price: "from £18.99",
+//     description:
+//       "A daily oral treatment that blocks DHT, the hormone responsible for hair loss in men.",
+//   },
+//   {
+//     id: 2,
+//     name: "Minoxidil Foam",
+//     image: "minoxidil-foam.jpg",
+//     price: "from £22.99",
+//     description:
+//       "A topical solution that promotes hair regrowth by increasing blood flow to the scalp.",
+//   },
+//   {
+//     id: 3,
+//     name: "Hair Growth Shampoo",
+//     image: "hair-growth-shampoo.jpg",
+//     price: "from £14.99",
+//     description:
+//       "Gentle, sulfate-free shampoo enriched with biotin to support hair health and reduce breakage.",
+//   },
+//   {
+//     id: 4,
+//     name: "Regaine Extra Strength",
+//     image: "regaine-extra.jpg",
+//     price: "from £29.99",
+//     description:
+//       "Clinically proven solution for hereditary hair loss available without prescription.",
+//   },
+//   {
+//     id: 5,
+//     name: "Biotin Tablets",
+//     image: "biotin-tablets.jpg",
+//     price: "from £9.99",
+//     description:
+//       "Daily supplements that strengthen hair, nails, and skin with high-dose biotin.",
+//   },
+//    {
+//     id: 6,
+//     name: "Priligy (Dapoxetine)",
+//     image: "priligy-packshot.jpg",
+//     price: "from £24.99",
+//     description: "Clinically proven treatment that helps delay ejaculation and prolong intercourse."
+//   },
+//   {
+//     id: 7,
+//     name: "Delay Spray",
+//     image: "delay-spray.jpg",
+//     price: "from £14.99",
+//     description: "Topical spray that desensitizes to help delay climax without compromising sensation."
+//   },
+//   {
+//     id: 8,
+//     name: "Lidocaine Cream",
+//     image: "lidocaine-cream.jpg",
+//     price: "from £12.99",
+//     description: "A numbing cream used to temporarily reduce sensitivity during intercourse."
+//   },
+//   {
+//     id: 9,
+//     name: "Performance Condoms",
+//     image: "performance-condoms.jpg",
+//     price: "from £9.99",
+//     description: "Condoms designed with a mild numbing agent to enhance endurance."
+//   },
+
+// ];
+
 // This file contains sample data for various health categories and treatments.
 export const mensHealthCategories = [
   {

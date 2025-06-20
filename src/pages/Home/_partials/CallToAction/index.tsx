@@ -2,7 +2,7 @@ import { Button, Input, Space } from "antd";
 
 const CallToAction = () => {
   return (
-    <div className="bg-teal-100 text-white p-4 rounded-md">
+    <div className="bg-teal-100 text-white p-4 rounded-md" id="cta">
       <div className="w-[90%] md:h-60 mx-auto bg-teal-800 p-6 lg:px-10 rounded-md">
         <div className="flex  flex-col md:flex-row md:justify-between items-center h-full ">
           <div className="flex text-center lg:text-start  h-full flex-col  items-center justify-between  text-white">

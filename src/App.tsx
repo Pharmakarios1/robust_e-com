@@ -10,7 +10,7 @@ import Home from "pages/Home";
 import Product from "pages/Products";
 import ProductDetails from "pages/ProductDetails";
 import Blog from "pages/Blog/Index";
-import Treatment from "pages/Treatment";
+import Checkout from "pages/Checkout";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -43,14 +43,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
+
             <Route path="/cart" element={<Cart />} />
+            <Route path="/check" element={<Checkout />} />
             <Route path="/product" element={<Product />} />
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/review" element={<p>hello</p>} />
-            <Route path="/treatments" element={<Treatment />} />
-            <Route path="/treatment/:id" element={<Treatment />} />
             <Route path="/blog" element={<Blog />} />
-
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
