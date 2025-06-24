@@ -12,6 +12,7 @@ import Product from "pages/Products";
 import ProductDetails from "pages/ProductDetails";
 import Blog from "pages/Blog/Index";
 import Checkout from "pages/Checkout";
+import Treatment from "pages/Treatment";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -44,11 +45,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
-
             <Route path="/cart" element={<Cart />} />
             <Route path="/check" element={<Checkout />} />
             <Route path="/product" element={<Product />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route
+              path="/treatments/:slug/products/:slug"
+              element={<ProductDetails />}
+            />
+            <Route path="/:slug" element={<Treatment />} />
             <Route path="/review" element={<p>hello</p>} />
             <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />

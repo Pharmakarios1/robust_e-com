@@ -1,38 +1,61 @@
-import CustomSearch from "@components/CustomSearch";
-import { useEffect, useRef } from "react";
-import { InputRef } from "antd";
-import { useSelector } from "react-redux";
-import { RootState } from "Redux/store";
-
+import { AiFillProduct } from "react-icons/ai";
+import { TfiAngleRight } from "react-icons/tfi";
+import { Link, useParams } from "react-router";
+import { treatments } from "utils/data";
 
 const Treatment = () => {
-  const isActive = useSelector(
-    (state: RootState) => state.ui.isSearchBoxActive
-  );
-  const inputRef = useRef<InputRef>(null);
-  
+  const { slug } = useParams();
 
-  useEffect(() => {
-    if (isActive) {
-      inputRef.current?.focus();
-    }
-  }, [isActive]); // Changed dependency to isActive
+  // Optionally fetch more data using slug or filter from static data
+  // const treatment = treatments.find((t) => t.slug === slug);
+  const treatment = treatments.find((treatment) => treatment.slug === slug);
+  if (!treatment) return <p>Treatment not found</p>;
 
-  
+  const defaultImg = "/png/hero.png";
 
   return (
-    <div
-      className="w-[80%] mx-auto flex flex-col justify-center"
-    
-    >
-      <div className="flex flex-col justify-center mt-20">
-        <h1 className="text-2xl font-bold text-center mb-5">Treatment Page</h1>
-        <CustomSearch ref={inputRef} className="!w-full" />
-      </div>
-      <div>
-        <p className="text-center mt-4">
-          This is the treatment page where you can find various treatments.
-        </p>
+    <div className=" bg-teal-100  pt-12">
+      <div className="w-[90%] mx-auto bg-white rounded-lg shadow-md p-6">
+        <div className="flex p-4 flex-col md:flex-row gap-4">
+          <img
+            src={treatment.imgurl || "/png/hero.png"}
+            alt={treatment.condition}
+            className="w-full h-64 object-cover rounded-lg"
+          />
+          <div className="flex flex-col justify-center md:justify-start">
+            <h1 className="text-3xl font-bold">{treatment.condition}</h1>
+            <p className="text-gray-400 text-xl">{treatment.tag}</p>
+            <p className="text-sm md:text-base pt-3">{treatment.description}</p>
+          </div>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mt-4">Available Treatments</h2>
+          <ul className="list-disc pl-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            {treatment.products.map((item, index) => {
+              const slug = item.name.toLowerCase().replace(/\s+/g, "-");
+              return (
+                <Link
+                  to={`products/${slug}`}
+                  key={index}
+                  className="text-sm md:text-base list-none"
+                >
+                  <div className="flex flex-col  md:w-full  rounded-lg shadow-md hover:shadow-teal-600 transition-shadow  duration-300 ">
+                    <img
+                      src={defaultImg}
+                      alt={item.name}
+                      className="rounded-t-lg w-full h-44  md:flex"
+                    />
+                    <div className="cursor-pointer flex items-center justify-between p-2 bg-teal-800 text-white rounded-b-lg  ">
+                      <p>{<AiFillProduct />}</p>
+                      <p className="text-lg font-semibold">{item.name}</p>
+                      <TfiAngleRight className="" />
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );

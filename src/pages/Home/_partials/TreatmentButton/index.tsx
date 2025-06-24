@@ -1,8 +1,8 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { treatments } from "utils/data";
 import TreatmentCard from "./_partials/TreatmentCard";
 import { Spin } from "antd";
-
+import { Link } from "react-router";
 
 const TreatmentWrapper = () => {
   // State to manage active category and selected treatment
@@ -31,7 +31,7 @@ const TreatmentWrapper = () => {
   };
 
   return (
-    <div className="w-[90%]  mx-auto mt-8" id='treatments'>
+    <div className="w-[90%]  mx-auto mt-8" id="treatments">
       <div className="flex flex-col items-center justify-center text-center">
         <div>
           <h2 className="text-2xl mb-4 md:text-4xl font-bold text-teal-800">
@@ -109,12 +109,14 @@ const TreatmentWrapper = () => {
           {/* ui rendering */}
           <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
             {filtered.slice(0, loadmore).map((item) => (
-              <TreatmentCard
-                key={item.id}
-                imgurl={item.imgurl}
-                conditionName={item.condition}
-                icon={item.icon}
-              />
+              <Link to={`/${item.slug}`}>
+                <TreatmentCard
+                  key={item.id}
+                  imgurl={item.imgurl}
+                  conditionName={item.condition}
+                  icon={item.icon}
+                />
+              </Link>
             ))}
           </div>
           {/* loading spinner */}
