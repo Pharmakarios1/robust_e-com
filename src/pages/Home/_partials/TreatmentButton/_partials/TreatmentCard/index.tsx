@@ -1,8 +1,10 @@
-import { BiFace } from "react-icons/bi";
-import { FaAngleRight } from "react-icons/fa";
+import { CiMedicalClipboard } from "react-icons/ci";
+
+import { TfiAngleRight } from "react-icons/tfi";
 import { Link } from "react-router";
 
 const TreatmentCard = ({
+  icon,
   imgurl,
   conditionName,
 }: {
@@ -12,21 +14,21 @@ const TreatmentCard = ({
 }) => {
   const defaultImg = "/png/hero.png";
   const i = imgurl ? imgurl : defaultImg;
-  const defaultIcon = <BiFace />;
+  const defaultIcon = <CiMedicalClipboard className="text-2xl" />;
   return (
     <Link
       to={`/treatments/${conditionName}`.toString()}
-      className="flex flex-col  md:w-full  rounded-lg shadow-md hover:shadow-lg transition-shadow  duration-300 "
+      className="flex flex-col  md:w-full  rounded-lg shadow-md hover:shadow-teal-600 transition-shadow  duration-300 "
     >
       <img
         src={i}
         alt={conditionName}
-        className="rounded-t-lg w-full h-36  md:flex"
+        className="rounded-t-lg w-full h-44  md:flex"
       />
-      <div className="cursor-pointer flex items-center justify-between p-1 bg-teal-800 text-white rounded-b-lg  ">
-        {defaultIcon ? defaultIcon : <BiFace className="text-2xl" />}
-        <h3 className="text-lg font-semibold mt-2">{conditionName}</h3>
-        <FaAngleRight className="text-2xl" />
+      <div className="cursor-pointer flex items-center justify-between p-2 bg-teal-800 text-white rounded-b-lg  ">
+        <p>{icon ? defaultIcon: icon}</p>
+        <p className="text-lg font-semibold">{conditionName}</p>
+        <TfiAngleRight className="" />
       </div>
     </Link>
   );

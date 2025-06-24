@@ -9,7 +9,7 @@ const TreatmentWrapper = () => {
   const [active, setActive] = useState<string>("All Treatments");
   const [selectedCategory, setSelectedCategory] = useState("All Treatments");
   const [loading, setLoading] = useState<boolean>(false);
-  const [loadmore, setLoadmore] = useState<number>(4);
+  const [loadmore, setLoadmore] = useState<number>(8);
 
   const filtered =
     selectedCategory === "All Treatments"

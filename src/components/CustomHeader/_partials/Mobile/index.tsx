@@ -87,7 +87,7 @@ const MobibleNav = () => {
             exit={{ x: "-100%" }}
             className="fixed top-0 left-0 w-full h-full z-50 md:hidden"
           >
-            <div className="bg-white w-64 h-full p-5 overflow-y-auto">
+            <div className="bg-white w-64 h-full p-5 overflow-y-auto scrollbar-thin scrollbar-thumb-teal-800 scrollbar-track-transparent">
               <div className="space-y-4 mt-20 pb-2 border-b border-teal-800">
                 {/* men's health */}
                 <div>
@@ -223,153 +223,68 @@ const MobibleNav = () => {
                 </div>
               </div>
               <div className="space-y-4 mt-0 ">
-                {/* men's health */}
+                {/*About */}
                 <div>
-                  <div
-                    onClick={() => setMen(!men)}
+                  <Link
+                    to="/about"
                     className=" justify-between text-teal-800 text-base font-semibold flex items-center gap-2"
                   >
                     About
-                  </div>
-                  <div>
-                    {men && (
-                      <ul className="pl-4 mt-2 space-y-1 text-sm">
-                        <li>Condoms</li>
-                        <li>Erectile Dysfunction</li>
-                        <li>Hair Loss</li>
-                        <li>Testosterone Boosters</li>
-                        <li>Prostate Health</li>
-                        <li>Fertility Support</li>
-                        <li>Sexual Wellness</li>
-                      </ul>
-                    )}
-                  </div>
+                  </Link>
                 </div>
-                {/* women's health */}
+                {/* contact */}
                 <div>
-                  <div
-                    onClick={() => setWomen(!women)}
+                  <Link
+                    to="/contact"
                     className=" justify-between text-teal-800 text-base font-semibold flex items-center gap-2"
                   >
                     Contact Us
-                  </div>
-                  <div>
-                    {women && (
-                      <ul className="pl-4 mt-2 space-y-1 text-sm">
-                        <li>Cystitis</li>
-                        <li>Contraceptive Pill</li>
-                        <li>Menopause Support</li>
-                        <li>Pregnancy Support</li>
-                        <li>Postpartum Care</li>
-                        <li>Periods</li>
-                        <li>Weight Loss</li>
-                      </ul>
-                    )}
-                  </div>
+                  </Link>
                 </div>
-                {/* general health */}
+                {/* Faqs */}
                 <div>
-                  <div
-                    onClick={() => setGeneral(!general)}
+                  <Link
+                    to="/faqs"
                     className=" justify-between text-teal-800 text-base font-semibold flex items-center gap-2"
                   >
                     Faqs
-                  </div>
-                  <div>
-                    {general && (
-                      <ul className="pl-4 mt-2 space-y-1 text-sm">
-                        <li>First Aids</li>
-                        <li>Allergy</li>
-                        <li>Pain Relief</li>
-                        <li>digestive Health</li>
-                        <li>Cold & Flu</li>
-                        <li>Vitamins & Supplements</li>
-                      </ul>
-                    )}
-                  </div>
+                  </Link>
                 </div>
-                {/* respiratory */}
+                {/* loyalty */}
                 <div>
-                  <div
-                    onClick={() => setRespiratory(!respiratory)}
+                  <Link
+                    to="/loyalty"
                     className=" justify-between text-teal-800 text-base font-semibold flex items-center gap-2"
                   >
                     Loyalty
-                  </div>
-                  <div>
-                    {respiratory && (
-                      <ul className="pl-4 mt-2 space-y-1 text-sm">
-                        <li>Cough Relief</li>
-                        <li>Allergy Relief</li>
-                        <li>Asthma management</li>
-                        <li>Sinus Relief</li>
-                        <li>Emphysema</li>
-                        <li>Bronchitis</li>
-                      </ul>
-                    )}
-                  </div>
+                  </Link>
                 </div>
-                {/* travel */}
+                {/* Delivery */}
                 <div>
-                  <div
-                    onClick={() => setTravel(!travel)}
+                  <Link
+                    to={"/delivery"}
                     className="justify-between text-teal-800 text-base font-semibold flex items-center gap-2"
                   >
                     Delivery
-                  </div>
-                  <div>
-                    {travel && (
-                      <ul className="pl-4 mt-2 space-y-1 text-sm">
-                        <li>Travel Health kits</li>
-                        <li>Inset Repellants</li>
-                        <li>Motion Sickness</li>
-                      </ul>
-                    )}
-                  </div>
+                  </Link>
                 </div>
-                {/* skin care */}
+                {/* hub */}
                 <div>
-                  <div
-                    onClick={() => setSkin(!skin)}
+                  <Link
+                    to={"/hub"}
                     className=" justify-between text-teal-800 text-base font-semibold flex items-center gap-2"
                   >
                     Hub
-                  </div>
-                  <div>
-                    {skin && (
-                      <ul className="pl-4 mt-2 space-y-1 text-sm">
-                        <li>Moisturisers</li>
-                        <li>Sunscreens</li>
-                        <li>Acne Treatments</li>
-                        <li>Anti-Aging</li>
-                        <li>Hydration</li>
-                        <li>Skin Repair</li>
-                        <li>Sunburn Relief</li>
-                      </ul>
-                    )}
-                  </div>
+                  </Link>
                 </div>
-                {/* skin care */}
+                {/* mart */}
                 <div>
-                  <div
-                    onClick={() => setSkin(!skin)}
+                  <Link
+                    to={"/supermart"}
                     className=" justify-between text-teal-800 text-base font-semibold flex items-center gap-2"
                   >
                     Supermart
-                  </div>
-                  <div>
-                    {skin && (
-                      <ul className="pl-4 mt-2 space-y-1 text-sm">
-                        <li>Moisturisers</li>
-                        <li>Sunscreens</li>
-                        <li>Acne Treatments</li>
-                        <li>Anti-Aging</li>
-                        <li>Hydration</li>
-                        <li>Skin Repair</li>
-                        <li>Sunburn Relief</li>
-                      </ul>
-                    )}
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>

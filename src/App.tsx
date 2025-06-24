@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RootLayout from "Layout/RootLayout";
 import { Routes, Route } from "react-router";
 import { ConfigProvider } from "antd";
+import "swiper/swiper-bundle.css";
 //pages
 import Cart from "pages/Cart";
 import NotFound from "pages/NotFound";

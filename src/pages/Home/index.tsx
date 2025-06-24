@@ -4,6 +4,8 @@ import TreatmentSectionWrapper from "./_partials/TreatmentButton";
 import CallToAction from "./_partials/CallToAction";
 import { useEffect } from "react";
 import { useLocation } from "react-router";
+import Team from "./_partials/Team";
+import Reviews from "./_partials/Reviews";
 
 const Homepage = () => {
   const { hash } = useLocation();
@@ -17,6 +19,8 @@ const Homepage = () => {
     <div>
       <Hero />
       <TreatmentSectionWrapper />
+      <Team />
+      <Reviews />
       <SponsorsMarquee />
       <CallToAction />
     </div>
