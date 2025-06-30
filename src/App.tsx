@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router";
 import { ConfigProvider } from "antd";
 import "swiper/swiper-bundle.css";
 //pages
-import Cart from "pages/Cart";
 import NotFound from "pages/NotFound";
 import Home from "pages/Home";
 import Product from "pages/Products";
@@ -13,6 +12,7 @@ import ProductDetails from "pages/ProductDetails";
 import Blog from "pages/Blog/Index";
 import Checkout from "pages/Checkout";
 import Treatment from "pages/Treatment";
+import CartPage from "pages/Cart";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -45,8 +45,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/check" element={<Checkout />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/product" element={<Product />} />
             <Route
               path="/treatments/:treatmentSlug/:productSlug"

@@ -1,8 +1,12 @@
-import PriceChecker from "@components/CustomPriceChecker";
+//third party import
 import { BiStar } from "react-icons/bi";
-import { PiShippingContainer } from "react-icons/pi";
+
 import { useParams } from "react-router";
+
+//data & component
 import { treatments } from "utils/data";
+import PriceChecker from "@components/CustomPriceChecker";
+import { BsTruck } from "react-icons/bs";
 
 const ProductDetails = () => {
   const { productSlug } = useParams();
@@ -40,7 +44,8 @@ const ProductDetails = () => {
                 </p>
               </li>
               <li className="text-teal-600 flex items-center">
-                <PiShippingContainer /> Free shipping on all orders over £50
+                <BsTruck className="mr-2" /> Free shipping on all orders over
+                £50
               </li>
             </ul>
           </div>
@@ -79,7 +84,7 @@ const ProductDetails = () => {
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md my-6">
           <div className="flex items-center gap-1.5 text-teal-800 font-semibold text-sm">
-            <PiShippingContainer /> Shipping Information
+            <BsTruck className="mr-1" /> Shipping Information
           </div>
           <p className="text-gray-600 text-sm mt-2">
             Free shipping on all orders over £50. Standard delivery takes 3-5

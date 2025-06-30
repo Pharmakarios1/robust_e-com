@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { BiCollapse, BiMenu, BiSearch, BiUser } from "react-icons/bi";
 import { BsCart } from "react-icons/bs";
-
 import { Link } from "react-router";
 import { motion as m } from "framer-motion";
-import Account from "../DeskTop/_partials/Account";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "Redux/store";
 import { toggleSearchBox } from "Redux/ui/uiSlice";
 import { toggleAccountOpen } from "Redux/ui/accountSlice";
 import { CgClose } from "react-icons/cg";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+
+//
+import Account from "../DeskTop/_partials/Account";
+
+//redux
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "Redux/store";
 
 const MobibleNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,6 +28,12 @@ const MobibleNav = () => {
   const isAccountOpen = useSelector(
     (state: RootState) => state.account.isAccountActive
   );
+
+  //Redux managing cartItems
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  // Total quantity: sum of all item quantities
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <>
       <div className="fixed md:hidden w-full bg-teal-800 top-0  z-100 p-5 ">
@@ -68,11 +77,13 @@ const MobibleNav = () => {
             )}
             {isAccountOpen && <Account />}
 
-            <Link to="/cart" className="relative cursor-pointer ">
+            <Link to={`/cart`} className="relative cursor-pointer z-10">
               <BsCart className="text-2xl " />
-              <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full px-1">
-                3
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </Link>
           </div>
         </div>
@@ -291,6 +302,7 @@ const MobibleNav = () => {
           </m.div>
         )}
       </div>
+      {/* Cart */}
     </>
   );
 };
