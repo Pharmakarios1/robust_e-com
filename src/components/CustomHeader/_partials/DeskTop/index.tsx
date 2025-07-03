@@ -188,11 +188,11 @@ const DeskTop = () => {
 
       <div
         onClick={() => dispatch(toggleAccountOpen())}
-        className="flex text-2xl items-center justify-center gap-0.5 cursor-pointer"
+        className="flex items-end text-md  gap-0.5 cursor-pointer"
       >
-        <BiUser className=" " />
+        <BiUser className="text-xl " />
         <h2 className="text-base hidden md:block">Account</h2>
-        <FaAngleDown className="text-lg hidden md:block" />
+        <FaAngleDown className="text-sm hidden md:flex justify-start" />
         <Account />
       </div>
     </div>

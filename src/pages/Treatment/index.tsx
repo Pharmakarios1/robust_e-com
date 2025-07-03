@@ -57,8 +57,8 @@ const Treatment = () => {
                       </p>
                     </div>
                     <div className="cursor-pointer flex items-center justify-between p-2 bg-teal-800 text-white rounded-b-lg  ">
-                      <p className="text-sm font-semibold">{item.name}</p>
-                      <p className="text-sm ">
+                      <p className="text-sm text-nowrap">{item.name}</p>
+                      <p className="text-sm text-nowrap bg-black/40 absolute bottom-14 left-[50%] p-1 rounded-md">
                         Price From: $<span>{item.price}</span>
                       </p>
                       <TfiAngleRight className="" />

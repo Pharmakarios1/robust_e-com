@@ -4,6 +4,7 @@ import { useState } from "react";
 import { addToCart } from "../../Redux/cart/cartSlice";
 
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 type PriceCheckerProps = {
   product: {
@@ -37,6 +38,7 @@ const PriceChecker = ({ product, treatment }: PriceCheckerProps) => {
         quantity,
       })
     );
+    toast.success(`${product.name} is added to Cart`);
     navigate("/cart");
   };
 

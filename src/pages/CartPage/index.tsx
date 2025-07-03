@@ -1,12 +1,14 @@
-// CartPage.tsx
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../Redux/store";
 import { removeFromCart, updateCartItem } from "../../Redux/cart/cartSlice";
 import { CgClose } from "react-icons/cg";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-import { Link } from "react-router";
+import { FaAngleRight } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router";
+import { AiOutlineAlert } from "react-icons/ai";
+import { Button } from "antd";
 
 const CartPage = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
@@ -24,23 +26,35 @@ const CartPage = () => {
     0
   );
 
+  const handleHomeClick = () => {
+    navigate("/products");
+  };
   return (
     <div className="max-w-4xl mx-auto p-4 min-h-[600px] mt-20 md:mt-0 ">
-      <div className="flex items-center justify-between">
-        <Link
-          to={`/`}
-          className="flex items-center justify-center gap-1 cursor-pointer text-teal-800 border-[1px] p-1 rounded-md hover:bg-teal-800 hover:text-white"
-        >
-          <FaAngleLeft />
-          Shop More
-        </Link>
+      <div className="flex flex-col">
+        <div className="flex items-center gap-[40%] mb-2 ">
+          <Button
+            onClick={handleHomeClick}
+            type="text"
+            className="!text-teal-800 "
+          >
+            Back Home
+          </Button>
+          <h1 className="text-xl md:3xl text-teal-800 font-semibold md:font-bold">
+            Your Cart
+          </h1>
+        </div>
+        <div className="bg-teal-50 p-2 rounded-md  lg:max-w-[400px]">
+          <span className="flex-1/2 items-center bg-gradient-to-r bg-clip-text  text-transparent from-teal-900 to-teal-500 text-[12px]">
+            <AiOutlineAlert className="text-red-600 text-xl" />
+            Do some more checkings before checking out. You're a highly valued
+            Client
+          </span>
+        </div>
       </div>
-      <h2 className="text-2xl text-center font-bold mb-6 text-teal-800 ">
-        Cart
-      </h2>
 
       {cartItems.length === 0 ? (
-        <p className="text-red-400">Your cart is empty.</p>
+        <p className="text-red-400 text-center my-10">Your cart is empty.</p>
       ) : (
         cartItems.map((item) => (
           <div
@@ -89,13 +103,23 @@ const CartPage = () => {
         </div>
       )}
 
-      <div className="my-10 flex items-center justify-center md:justify-end">
-        <Link
-          to={`/checkout`}
-          className="flex items-center justify-center gap-1 cursor-pointer text-teal-800 border-[1px] p-2 rounded-md hover:bg-teal-800 hover:text-white"
-        >
-          CheckOut <FaAngleRight />
-        </Link>
+      <div className="my-10 flex items-center justify-center ">
+        {cartItems.length === 0 ? (
+          <Button
+            
+            onClick={handleHomeClick}
+            className="!text-teal-800 "
+          >
+            Product Listings
+          </Button>
+        ) : (
+          <Link
+            to={`/checkout`}
+            className="flex items-center justify-center gap-1 cursor-pointer text-teal-800 border-[1px] p-2 rounded-md hover:bg-teal-800 hover:text-white"
+          >
+            CheckOut <FaAngleRight />
+          </Link>
+        )}
       </div>
     </div>
   );

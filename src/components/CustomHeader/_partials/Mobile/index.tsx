@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BiCollapse, BiMenu, BiSearch, BiUser } from "react-icons/bi";
-import { BsCart } from "react-icons/bs";
 import { Link } from "react-router";
 import { motion as m } from "framer-motion";
 import { toggleSearchBox } from "Redux/ui/uiSlice";
@@ -14,6 +13,7 @@ import Account from "../DeskTop/_partials/Account";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "Redux/store";
+import CartBox from "@components/Cart";
 
 const MobibleNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,11 +28,6 @@ const MobibleNav = () => {
   const isAccountOpen = useSelector(
     (state: RootState) => state.account.isAccountActive
   );
-
-  //Redux managing cartItems
-  const cartItems = useSelector((state: RootState) => state.cart.items);
-  // Total quantity: sum of all item quantities
-  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>
@@ -77,14 +72,7 @@ const MobibleNav = () => {
             )}
             {isAccountOpen && <Account />}
 
-            <Link to={`/cart`} className="relative cursor-pointer z-10">
-              <BsCart className="text-2xl " />
-              {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
-            </Link>
+            <CartBox />
           </div>
         </div>
       </div>
