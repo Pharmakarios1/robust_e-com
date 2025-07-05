@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import CustomHeader from "@components/CustomHeader";
 import Footer from "@components/Footer";
 import Ads from "@components/CustomHeader/_partials/Ads";
+import ScrollToTop from "@components/ScrollToTop";
 
 const RootLayout = () => {
   return (
@@ -16,6 +17,7 @@ const RootLayout = () => {
           <ToastContainer />
         </header>
         <main>
+          <ScrollToTop />
           <Outlet />
         </main>
         <footer>
